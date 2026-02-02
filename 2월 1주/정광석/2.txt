@@ -1,1 +1,10 @@
 https://www.acmicpc.net/problem/3425
+
+3425 
+
+명령어를 입력 받는 QUEUE
+
+실제 연산을 수행하는 STACK
+
+
+3425	35784kb	336ms	5517B
