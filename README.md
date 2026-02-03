@@ -1,14 +1,36 @@
-# ssafy_13_coding_test
+# 🐢 SW 역량테스트 A형 대비 스터디
 
+매주 정해진 문제를 풀고 Commit 올려주세요!
 
-각 txt 파일 안에 백준 링크 들어 있습니다.
+## 이번 주 도전 문제 (2월 1주차)
+| 문제 번호 | 문제 이름(링크) | 상태 |
+| :---: | :--- | :---: |
+| 3055 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/3055) | 🏃 진행중 |
+| 3425 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/3425) | 🏃 진행중 |
+| 1937 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/1937) | 🏃 진행중 |
+| 4811 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/4811) | 🏃 진행중 |
+| 11049 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/11049) | 🏃 진행중 |
 
+---
 
-1. 문제 풀기
+## 📚 스터디 기록
+<details>
+<summary><b>2월 3주차 (클릭해서 보기)</b></summary>
 
-2. 문제 풀이 방식 문서화
-  2-1. 시작 시간, 완료 시간
-  2-2. AI 사용 여부
-  
-4. 각자 이름 폴더 안에 코드 + 풀이 과정 push
+| 문제 번호 | 링크 |
+| :---: | :--- |
+| 10000 | [바로가기](https://www.acmicpc.net/problem/10000) |
+| 20000 | [바로가기](https://www.acmicpc.net/problem/20000) |
+
+</details>
+
+<details>
+<summary><b>2월 2주차 (클릭해서 보기)</b></summary>
+
+| 문제 번호 | 링크 |
+| :---: | :--- |
+| 2588 | [바로가기](https://www.acmicpc.net/problem/2588) |
+| 1330 | [바로가기](https://www.acmicpc.net/problem/1330) |
+
+</details>
 
