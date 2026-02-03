@@ -1,4 +1,4 @@
-# 🐢 SW 역량테스트 A형 대비 스터디
+# 🐢 SW 역량테스트 B형 대비 스터디
 
 매주 정해진 문제를 풀고 Commit 올려주세요!
 
@@ -31,6 +31,7 @@
 | :---: | :--- |
 | 2588 | [바로가기](https://www.acmicpc.net/problem/2588) |
 | 1330 | [바로가기](https://www.acmicpc.net/problem/1330) |
+| 12314 | [바로가기](https://www.acmicpc.net/problem/12314) |
 
 </details>
 
