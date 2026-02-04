@@ -2,36 +2,43 @@
 
 매주 정해진 문제를 풀고 Commit 올려주세요!
 
-## 이번 주 도전 문제 (2월 1주차)
-| 문제 번호 | 문제 이름(링크) | 상태 |
+## 📅 주차별 스터디 일정
+### 2월 1주차 ⭐ (이번 주)
+| 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
-| 3055 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/3055) | 🏃 진행중 |
-| 3425 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/3425) | 🏃 진행중 |
-| 1937 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/1937) | 🏃 진행중 |
-| 4811 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/4811) | 🏃 진행중 |
-| 11049 | [문제 보러가기 🚀](https://www.acmicpc.net/problem/11049) | 🏃 진행중 |
+| 3055 | 탈출 | [바로가기](https://www.acmicpc.net/problem/3055) |
+| 3425 | 고스택 | [바로가기](https://www.acmicpc.net/problem/3425) |
+| 1937 | 욕심쟁이 판다 | [바로가기](https://www.acmicpc.net/problem/1937) |
+| 4811 | 알약 | [바로가기](https://www.acmicpc.net/problem/4811) |
+| 11049 | 행렬 곱셈 순서 | [바로가기](https://www.acmicpc.net/problem/11049) |
 
 ---
 
-## 📚 스터디 기록
+## 📚 별도 문제
 <details>
-<summary><b>2월 3주차 (클릭해서 보기)</b></summary>
+<summary><b>🔥 B형 대비 필수 DP 문제집 (펼치기)</b></summary>
 
-| 문제 번호 | 링크 |
-| :---: | :--- |
-| 10000 | [바로가기](https://www.acmicpc.net/problem/10000) |
-| 20000 | [바로가기](https://www.acmicpc.net/problem/20000) |
-
-</details>
-
-<details>
-<summary><b>2월 2주차 (클릭해서 보기)</b></summary>
-
-| 문제 번호 | 링크 |
-| :---: | :--- |
-| 2588 | [바로가기](https://www.acmicpc.net/problem/2588) |
-| 1330 | [바로가기](https://www.acmicpc.net/problem/1330) |
-| 12314 | [바로가기](https://www.acmicpc.net/problem/12314) |
+| 문제 번호 | 문제 이름 | 링크 |
+| :---: | :--- | :---: |
+| 5582 | 공통 부분 문자열 | [바로가기](https://www.acmicpc.net/problem/5582) |
+| 2618 | 경찰차 | [바로가기](https://www.acmicpc.net/problem/2618) |
+| 2229 | 조 짜기 | [바로가기](https://www.acmicpc.net/problem/2229) |
+| 1947 | 선물 전달 | [바로가기](https://www.acmicpc.net/problem/1947) |
+| 2306 | 유전자 | [바로가기](https://www.acmicpc.net/problem/2306) |
+| 1670 | 정상 회담 2 | [바로가기](https://www.acmicpc.net/problem/1670) |
+| 2159 | 케익 배달 | [바로가기](https://www.acmicpc.net/problem/2159) |
+| 2216 | 문자열과 점수 | [바로가기](https://www.acmicpc.net/problem/2216) |
+| 1577 | 도로의 개수 | [바로가기](https://www.acmicpc.net/problem/1577) |
+| 1146 | 지그재그 서기 | [바로가기](https://www.acmicpc.net/problem/1146) |
+| 2248 | 이진수 찾기 | [바로가기](https://www.acmicpc.net/problem/2248) |
+| 1983 | 숫자 박스 | [바로가기](https://www.acmicpc.net/problem/1983) |
+| 2092 | 집합의 개수 | [바로가기](https://www.acmicpc.net/problem/2092) |
+| 2253 | 점프 | [바로가기](https://www.acmicpc.net/problem/2253) |
+| 2066 | 카드놀이 | [바로가기](https://www.acmicpc.net/problem/2066) |
+| 2305 | 자리 배치 | [바로가기](https://www.acmicpc.net/problem/2305) |
+| 1480 | 보석 모으기 | [바로가기](https://www.acmicpc.net/problem/1480) |
+| 15673 | 헤븐스 키친 2 | [바로가기](https://www.acmicpc.net/problem/15673) |
+| 13343 | Block Game | [바로가기](https://www.acmicpc.net/problem/13343) |
 
 </details>
 
