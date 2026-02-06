@@ -3,7 +3,7 @@
 매주 정해진 문제를 풀고 Commit 올려주세요!
 
 ## 📅 주차별 스터디 일정
-### 2월 1주차 ⭐ (이번 주)
+### 2월 1주차
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 3055 | 탈출 | [바로가기](https://www.acmicpc.net/problem/3055) |
@@ -11,6 +11,15 @@
 | 1937 | 욕심쟁이 판다 | [바로가기](https://www.acmicpc.net/problem/1937) |
 | 4811 | 알약 | [바로가기](https://www.acmicpc.net/problem/4811) |
 | 11049 | 행렬 곱셈 순서 | [바로가기](https://www.acmicpc.net/problem/11049) |
+
+### 2월 2주차 ⭐ (이번 주)
+| 문제 번호 | 문제 이름 | 링크 |
+| :---: | :--- | :---: |
+| 1655 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/1655) |
+| 5569 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/5569) |
+| 12886 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/12886) |
+| 1949 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/1949) |
+| 1765 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/1765) |
 
 ---
 
