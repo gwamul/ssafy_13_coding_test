@@ -15,11 +15,11 @@
 ### 2월 2주차 ⭐ (이번 주)
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
-| 1655 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/1655) |
-| 5569 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/5569) |
-| 12886 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/12886) |
-| 1949 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/1949) |
-| 1765 | 제목 정보 없음 | [바로가기](https://www.acmicpc.net/problem/1765) |
+| 1655 | 가운데를 말해요 | [바로가기](https://www.acmicpc.net/problem/1655) |
+| 5569 | 출근 경로 | [바로가기](https://www.acmicpc.net/problem/5569) |
+| 12886 | 돌 그룹 | [바로가기](https://www.acmicpc.net/problem/12886) |
+| 1949 | 우수 마을 | [바로가기](https://www.acmicpc.net/problem/1949) |
+| 1765 | 닭싸움 팀 정하기 | [바로가기](https://www.acmicpc.net/problem/1765) |
 
 ---
 
