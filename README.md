@@ -21,7 +21,7 @@
 | 1949 | 우수 마을 | [바로가기](https://www.acmicpc.net/problem/1949) |
 | 1765 | 닭싸움 팀 정하기 | [바로가기](https://www.acmicpc.net/problem/1765) |
 
-### 2월 3주차 ⭐ (이번 주)
+### 2월 3주차
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 15683 | 감시 | [바로가기](https://www.acmicpc.net/problem/15683) |
@@ -29,6 +29,15 @@
 | 17136 | 색종이 붙이기 | [바로가기](https://www.acmicpc.net/problem/17136) |
 | 2146 | 다리 만들기 | [바로가기](https://www.acmicpc.net/problem/2146) |
 | 17472 | 다리 만들기 2 | [바로가기](https://www.acmicpc.net/problem/17472) |
+
+### 2월 4주차 ⭐ (이번 주)
+| 문제 번호 | 문제 이름 | 링크 |
+| :---: | :--- | :---: |
+| 11967 | 불켜기 | [바로가기](https://www.acmicpc.net/problem/11967) |
+| 2294 | 동전 2 | [바로가기](https://www.acmicpc.net/problem/2294) |
+| 13549 | 숨바꼭질 3 | [바로가기](https://www.acmicpc.net/problem/13549) |
+| 11062 | 카드 게임 | [바로가기](https://www.acmicpc.net/problem/11062) |
+| 2169 | 로봇 조종하기 | [바로가기](https://www.acmicpc.net/problem/2169) |
 
 ---
 
