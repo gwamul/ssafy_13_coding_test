@@ -39,6 +39,7 @@
 | 11062 | 카드 게임 | [바로가기](https://www.acmicpc.net/problem/11062) |
 | 2169 | 로봇 조종하기 | [바로가기](https://www.acmicpc.net/problem/2169) |
 
+기업 코테 `메두사와 전사들` [코드트리 바로가기](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/medusa-and-warriors/description)
 ---
 
 ## 📚 별도 문제
