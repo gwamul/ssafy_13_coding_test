@@ -1,0 +1,12 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Java source files
+*.java text eol=lf
+
+# Text files
+*.txt text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
