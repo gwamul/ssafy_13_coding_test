@@ -48,6 +48,8 @@
 | 10775 | 공항 | [바로가기](https://www.acmicpc.net/problem/10775) |
 | 13459 | 구슬 탈출 | [바로가기](https://www.acmicpc.net/problem/13459) |
 
+## 코드트리 
+[민트초코우유](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/mint-choco-milk/description)
 ---
 
 ## 📚 별도 문제
