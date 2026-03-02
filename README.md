@@ -30,7 +30,7 @@
 | 2146 | 다리 만들기 | [바로가기](https://www.acmicpc.net/problem/2146) |
 | 17472 | 다리 만들기 2 | [바로가기](https://www.acmicpc.net/problem/17472) |
 
-### 2월 4주차 ⭐ (이번 주)
+### 2월 4주차
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 11967 | 불켜기 | [바로가기](https://www.acmicpc.net/problem/11967) |
@@ -39,7 +39,7 @@
 | 11062 | 카드 게임 | [바로가기](https://www.acmicpc.net/problem/11062) |
 | 2169 | 로봇 조종하기 | [바로가기](https://www.acmicpc.net/problem/2169) |
 
-### 3월 1주차
+### 3월 1주차 ⭐ (이번 주)
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 7570 | 줄 세우기 | [바로가기](https://www.acmicpc.net/problem/7570) |
