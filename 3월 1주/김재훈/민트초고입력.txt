@@ -1,0 +1,39 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+
+public class Main {
+	
+	static int n;
+	static int t;
+	static char[][] food;
+	static int[][] holly;
+
+	public static void main(String[] args) throws Exception {
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    
+	    String[] nt = br.readLine().trim().split(" ");
+	    n = Integer.parseInt(nt[0]);
+	    t = Integer.parseInt(nt[1]);
+	    food = new char[n][n];
+	    holly = new int[n][n];
+	    for(int i = 0;i<n;i++) {
+	    	food[i] = br.readLine().trim().toCharArray();
+	    }
+	    
+	    for(int i = 0;i<n;i++) {
+	    	String[] line = br.readLine().trim().split(" ");
+	    	for(int j = 0;j<n;j++) {
+	    		holly[i][j] = Integer.parseInt(line[j]);
+	    	}
+	    }
+	    
+	    
+	    
+	    System.out.println(0);
+	}
+}
