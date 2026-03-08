@@ -48,8 +48,15 @@
 | 10775 | 공항 | [바로가기](https://www.acmicpc.net/problem/10775) |
 | 13459 | 구슬 탈출 | [바로가기](https://www.acmicpc.net/problem/13459) |
 
-## 코드트리 
-[민트초코우유](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/mint-choco-milk/description)
+### 3월 2주차
+| 문제 번호 | 문제 이름 | 링크 |
+| :---: | :--- | :---: |
+| 1300 | K번째 수 | [바로가기](https://www.acmicpc.net/problem/1300) |
+| 1311 | 할 일 정하기 1 | [바로가기](https://www.acmicpc.net/problem/1311) |
+| 1450 | 냅색문제 | [바로가기](https://www.acmicpc.net/problem/1450) |
+| 2457 | 공주님의 정원 | [바로가기](https://www.acmicpc.net/problem/2457) |
+| 2632 | 피자판매 | [바로가기](https://www.acmicpc.net/problem/2632) |
+
 ---
 
 ## 📚 별도 문제
