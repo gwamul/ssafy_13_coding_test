@@ -57,6 +57,8 @@
 | 2457 | 공주님의 정원 | [바로가기](https://www.acmicpc.net/problem/2457) |
 | 2632 | 피자판매 | [바로가기](https://www.acmicpc.net/problem/2632) |
 
+## 코드트리 기출 [개구리의여행](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/frog-journey/description)
+## SWEA B형 [어항물채우기](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AZt8IiBqxEDHBIN6&contestProbId=AZhevOz6LizHBINp&probBoxId=AZt8IiBqxEHHBIN6&type=PROBLEM&problemBoxTitle=B%ED%98%95+%EA%B8%B0%EC%B6%9C&problemBoxCnt=41)
 ---
 
 ## 📚 별도 문제
