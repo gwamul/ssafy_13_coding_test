@@ -39,7 +39,7 @@
 | 11062 | 카드 게임 | [바로가기](https://www.acmicpc.net/problem/11062) |
 | 2169 | 로봇 조종하기 | [바로가기](https://www.acmicpc.net/problem/2169) |
 
-### 3월 1주차 ⭐ (이번 주)
+### 3월 1주차
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 7570 | 줄 세우기 | [바로가기](https://www.acmicpc.net/problem/7570) |
@@ -48,7 +48,7 @@
 | 10775 | 공항 | [바로가기](https://www.acmicpc.net/problem/10775) |
 | 13459 | 구슬 탈출 | [바로가기](https://www.acmicpc.net/problem/13459) |
 
-### 3월 2주차
+### 3월 2주차 ⭐ (이번 주)
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 1300 | K번째 수 | [바로가기](https://www.acmicpc.net/problem/1300) |
