@@ -48,13 +48,21 @@
 | 10775 | 공항 | [바로가기](https://www.acmicpc.net/problem/10775) |
 | 13459 | 구슬 탈출 | [바로가기](https://www.acmicpc.net/problem/13459) |
 
-### 3월 2주차 ⭐ (이번 주)
+### 3월 2주차
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 1300 | K번째 수 | [바로가기](https://www.acmicpc.net/problem/1300) |
 | 1311 | 할 일 정하기 1 | [바로가기](https://www.acmicpc.net/problem/1311) |
 | 1450 | 냅색문제 | [바로가기](https://www.acmicpc.net/problem/1450) |
 | 2457 | 공주님의 정원 | [바로가기](https://www.acmicpc.net/problem/2457) |
+
+### 3월 3주차 ⭐ (이번 주)
+| 문제 번호 | 문제 이름 | 링크 |
+| :---: | :--- | :---: |
+| 2437 | 저울 | [바로가기](https://www.acmicpc.net/problem/2437) |
+| 16918 | 봄버맨 | [바로가기](https://www.acmicpc.net/problem/16918) |
+| 1253 | 좋다 | [바로가기](https://www.acmicpc.net/problem/1253) |
+| 2632 | 피자판매 | [바로가기](https://www.acmicpc.net/problem/2632) |
 
 ---
 
