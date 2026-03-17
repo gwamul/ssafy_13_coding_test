@@ -65,6 +65,8 @@
 | 2632 | 피자판매 | [바로가기](https://www.acmicpc.net/problem/2632) |
 
 [도로파괴](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AZt8IiBqxEDHBIN6&contestProbId=AZvan5jq8gHHBIN6&probBoxId=AZt8IiBqxEHHBIN6&type=PROBLEM&problemBoxTitle=B%ED%98%95+%EA%B8%B0%EC%B6%9C&problemBoxCnt=41)
+
+[로봇청소](https://www.codetree.ai/ko/frequent-problems/all/problems/ai-robot/description)
 ---
 
 ## 📚 별도 문제
