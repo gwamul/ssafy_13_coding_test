@@ -1,4 +1,4 @@
-package saffy_algo.BaekJoon.골드.골드1;
+		package saffy_algo.BaekJoon.골드.골드1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -90,4 +90,10 @@ public class BaekJoon1450_냅색문제_Main {
 			sol(idx+1,  limit, sum+cost[idx], result);
 		}
 	}
+
+
+	// 무조건 완전탐색
+
+	// DP로는 2^30 = 1억, 이게 결국 완탐
+	
 }
