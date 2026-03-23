@@ -56,7 +56,7 @@
 | 1450 | 냅색문제 | [바로가기](https://www.acmicpc.net/problem/1450) |
 | 2457 | 공주님의 정원 | [바로가기](https://www.acmicpc.net/problem/2457) |
 
-### 3월 3주차 ⭐ (이번 주)
+### 3월 3주차 (이번 주)
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 2437 | 저울 | [바로가기](https://www.acmicpc.net/problem/2437) |
@@ -64,7 +64,14 @@
 | 1253 | 좋다 | [바로가기](https://www.acmicpc.net/problem/1253) |
 | 2632 | 피자판매 | [바로가기](https://www.acmicpc.net/problem/2632) |
 
-[도로파괴](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AZt8IiBqxEDHBIN6&contestProbId=AZvan5jq8gHHBIN6&probBoxId=AZt8IiBqxEHHBIN6&type=PROBLEM&problemBoxTitle=B%ED%98%95+%EA%B8%B0%EC%B6%9C&problemBoxCnt=41)
+
+### 3월 4주차 (B형 시험 주)
+[기계식 주차장](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AZt8IiBqxEDHBIN6&contestProbId=AZvfGm7qDZ7HBIN6&probBoxId=AZt8IiBqxEHHBIN6&type=PROBLEM&problemBoxTitle=B%ED%98%95+%EA%B8%B0%EC%B6%9C&problemBoxCnt=41)
+
+[직선열차](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AZt8IiBqxEDHBIN6&contestProbId=AZjgXBL6ScPHBITM&probBoxId=AZt8IiBqxEHHBIN6&type=PROBLEM&problemBoxTitle=B%ED%98%95+%EA%B8%B0%EC%B6%9C&problemBoxCnt=41)
+
+
+[광물운송](https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AZt8IiBqxEDHBIN6&contestProbId=AZih1N5KuvDHBINp&probBoxId=AZt8IiBqxEHHBIN6&type=PROBLEM&problemBoxTitle=B%ED%98%95+%EA%B8%B0%EC%B6%9C&problemBoxCnt=41)
 
 [로봇청소](https://www.codetree.ai/ko/frequent-problems/all/problems/ai-robot/description)
 ---
