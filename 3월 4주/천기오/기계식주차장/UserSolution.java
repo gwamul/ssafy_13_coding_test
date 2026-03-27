@@ -2,216 +2,216 @@ package week8.기계식주차장;
 
 import java.util.*;
 
-class Car {
-    String carNo;
-    int xx;
-    char y;
-    int zzzz;
-    int status; // 0: 주차, 1: 견인, 2: 완전 삭제
-    int enterTime;
-    int row, col;
+class Car implements Comparable<Car> {
+	String carNo;
+	int xx;
+	char y;
+	int zzzz;
+	int status; // 0: 주차, 1: 견인, 2: 완전 삭제(출고/재입차)
+	int enterTime;
+	int row, col;
 
-    Car(String no, int time, int r, int c) {
-        this.carNo = no;
-        this.xx = (no.charAt(0) - '0') * 10 + (no.charAt(1) - '0');
-        this.y = no.charAt(2);
-        this.zzzz = (no.charAt(3) - '0') * 1000 + (no.charAt(4) - '0') * 100 
-                  + (no.charAt(5) - '0') * 10 + (no.charAt(6) - '0');
-        this.status = 0;
-        this.enterTime = time;
-        this.row = r;
-        this.col = c;
-    }
+	Car(String no, int time, int r, int c) {
+		this.carNo = no;
+		this.xx = Integer.parseInt(no.substring(0,2));
+		this.y = no.charAt(2);
+		this.zzzz = Integer.parseInt(no.substring(3,7));
+		this.status = 0;
+		this.enterTime = time;
+		this.row = r;
+		this.col = c;
+	}
+
+	@Override
+	public int compareTo(Car o) {
+		// 이미 주차(parked), 견인(towed) 큐를 따로 두었기 때문에 상태(status) 비교는 생략
+		if (this.xx != o.xx)
+			return this.xx - o.xx;
+		if (this.y != o.y)
+			return this.y - o.y;
+		return this.enterTime - o.enterTime; // 완벽히 동일할 경우 먼저 들어온 차 우선
+	}
 }
 
-// [핵심] 큐에 넣기 위한 포장지(스냅샷) 클래스
-class Node implements Comparable<Node> {
-    Car car;
-    int recordedStatus; // 큐에 들어갈 당시의 상태
-
-    Node(Car car, int recordedStatus) {
-        this.car = car;
-        this.recordedStatus = recordedStatus;
-    }
-
-    @Override
-    public int compareTo(Node o) {
-        // 1. 상태 비교 (주차 0 > 견인 1)
-        if (this.recordedStatus != o.recordedStatus) return this.recordedStatus - o.recordedStatus;
-        // 2. XX 오름차순
-        if (this.car.xx != o.car.xx) return this.car.xx - o.car.xx;
-        // 3. Y 오름차순
-        return this.car.y - o.car.y; 
-    }
+// ZZZZ별로 주차된 차와 견인된 차를 따로 관리하는 그룹
+class ZZZZGroup {
+	PriorityQueue<Car> parked = new PriorityQueue<>();
+	PriorityQueue<Car> towed = new PriorityQueue<>();
 }
 
 class UserSolution {
-    int n, m, l;
-    
-    int[] emptyCount; 
-    PriorityQueue<Integer>[] emptySlots;
-    Queue<Car> presentCars; 
-    Map<String, Car> carMap;
-    
-    // [변경점] Node(포장지)를 담는 단일 PriorityQueue 배열
-    PriorityQueue<Node>[] zzzzMap; 
+	int n, m, l;
 
-    @SuppressWarnings("unchecked")
-    public void init(int N, int M, int L) {
-        n = N; m = M; l = L;
-        
-        emptyCount = new int[n];
-        emptySlots = new PriorityQueue[n];
-        
-        for (int i = 0; i < n; i++) {
-            emptyCount[i] = m;
-            emptySlots[i] = new PriorityQueue<>();
-            for (int j = 0; j < m; j++) {
-                emptySlots[i].add(j);
-            }
-        }
+	int[] emptyCount;
+	PriorityQueue<Integer>[] emptySlots;
+	Queue<Car> presentCars;
+	Map<String, Car> carMap;
 
-        presentCars = new ArrayDeque<>();
-        carMap = new HashMap<>();
-        zzzzMap = new PriorityQueue[10000];
-    }
+	ZZZZGroup[] zzzzMap;
 
-    void simulate(int t) {
-        while (!presentCars.isEmpty()) {
-            if (presentCars.peek().enterTime + l <= t) {
-                Car car = presentCars.poll();
+	public void init(int N, int M, int L) {
+		n = N;
+		m = M;
+		l = L;
 
-                if (car.status == 0) {
-                    car.status = 1; // 실제 차량 상태 변경
-                    
-                    // [핵심] 견인된 새로운 상태의 포장지를 하나 더 만들어서 큐에 추가! (재정렬됨)
-                    if(zzzzMap[car.zzzz] != null) {
-                        zzzzMap[car.zzzz].add(new Node(car, 1));
-                    }
-                    
-                    emptySlots[car.row].add(car.col);
-                    emptyCount[car.row]++;
-                }
-            } else {
-                break;
-            }
-        }
-    }
+		emptyCount = new int[n];
+		emptySlots = new PriorityQueue[n];
 
-    void removeCarData(Car car) {
-        car.status = 2; 
-        carMap.remove(car.carNo);
-    }
+		for (int i = 0; i < n; i++) {
+			emptyCount[i] = m;
+			emptySlots[i] = new PriorityQueue<>();
+			for (int j = 0; j < m; j++) {
+				emptySlots[i].add(j);
+			}
+		}
 
-    public Solution.RESULT_E enter(int mTime, String mCarNo) {
-        simulate(mTime);
-        Solution.RESULT_E res = new Solution.RESULT_E();
+		presentCars = new ArrayDeque<>();
+		carMap = new HashMap<>();
+		// 0000 ~ 9999 까지 존재
+		zzzzMap = new ZZZZGroup[10000];
+	}
 
-        if (carMap.containsKey(mCarNo)) {
-            Car oldCar = carMap.get(mCarNo);
-            if (oldCar.status == 1) {
-                removeCarData(oldCar);
-            }
-        }
+	void simulate(int t) {
+		while (!presentCars.isEmpty()) {
+			if (presentCars.peek().enterTime + l <= t) {
+				Car car = presentCars.poll();
 
-        int bestX = -1;
-        int maxEmpty = 0;
-        
-        for (int i = 0; i < n; i++) {
-            if (emptyCount[i] > maxEmpty) {
-                maxEmpty = emptyCount[i];
-                bestX = i;
-            }
-        }
+				if (car.status == 0) {
+					car.status = 1; // 상태만 1로 변경 (Lazy Evaluation)
+					emptySlots[car.row].add(car.col);
+					emptyCount[car.row]++;
+				}
+			} else {
+				break;
+			}
+		}
+	}
 
-        if (bestX == -1) {
-            res.success = 0;
-            return res;
-        }
+	void removeCarData(Car car) {
+		car.status = 2;
+		carMap.remove(car.carNo);
+	}
 
-        int bestY = emptySlots[bestX].poll();
-        emptyCount[bestX]--;
+	public Solution.RESULT_E enter(int mTime, String mCarNo) {
+		simulate(mTime);
+		Solution.RESULT_E res = new Solution.RESULT_E();
 
-        Car newCar = new Car(mCarNo, mTime, bestX, bestY);
-        carMap.put(mCarNo, newCar);
-        
-        if (zzzzMap[newCar.zzzz] == null) {
-            zzzzMap[newCar.zzzz] = new PriorityQueue<>();
-        }
-        // [핵심] 처음 입차할 때 '주차(0)' 포장지를 만들어 삽입
-        zzzzMap[newCar.zzzz].add(new Node(newCar, 0));
-        
-        presentCars.add(newCar);
+		// 견인된 차량이 재입차할 수 있다. 이런 경우도 사용자가 이미 견인된 차량을 차량 보관소에서 찾았다고 생각하여 기록을 삭제한다.
+		// 만약, 견인된 차량 번호가 전달된 경우 주차 성공 여부와 상관없이 견인된 기록이 삭제되고 더 이상 견인된 차량으로 생각하지 않는다.
+		if (carMap.containsKey(mCarNo)) {
+			Car oldCar = carMap.get(mCarNo);
+			if (oldCar.status == 1) {
+				removeCarData(oldCar);
+			}
+		}
 
-        res.success = 1;
-        
-        char c1 = (char) (bestX + 'A');
-        char c2 = (char) (bestY / 100 + '0');
-        char c3 = (char) ((bestY / 10) % 10 + '0');
-        char c4 = (char) (bestY % 10 + '0');
-        res.locname = new String(new char[]{c1, c2, c3, c4});
-        
-        return res;
-    }
+		int bestX = -1;
+		int maxEmpty = 0;
 
-    public int pullout(int mTime, String mCarNo) {
-        simulate(mTime);
+		for (int i = 0; i < n; i++) {
+			if (emptyCount[i] > maxEmpty) {
+				maxEmpty = emptyCount[i];
+				bestX = i;
+			}
+		}
 
-        if (!carMap.containsKey(mCarNo)) return -1;
-        
-        Car car = carMap.get(mCarNo);
-        int result = -1;
+		if (bestX == -1) {
+			res.success = 0;
+			return res;
+		}
 
-        if (car.status == 0) {
-            result = mTime - car.enterTime;
-            emptySlots[car.row].add(car.col);
-            emptyCount[car.row]++;
-        } else if (car.status == 1) {
-            int towTime = mTime - (car.enterTime + l);
-            result = -1 * (l + towTime * 5);
-        }
+		int bestY = emptySlots[bestX].poll();
+		emptyCount[bestX]--;
 
-        removeCarData(car);
-        return result;
-    }
+		Car newCar = new Car(mCarNo, mTime, bestX, bestY);
+		carMap.put(mCarNo, newCar);
 
-    public Solution.RESULT_S search(int mTime, String mStr) {
-        simulate(mTime);
-        Solution.RESULT_S res = new Solution.RESULT_S();
+		if (zzzzMap[newCar.zzzz] == null) {
+			zzzzMap[newCar.zzzz] = new ZZZZGroup();
+		}
+		zzzzMap[newCar.zzzz].parked.add(newCar); // 무조건 parked 큐에 삽입
 
-        int zIdx = (mStr.charAt(0) - '0') * 1000 + (mStr.charAt(1) - '0') * 100 
-                 + (mStr.charAt(2) - '0') * 10 + (mStr.charAt(3) - '0');
-                 
-        PriorityQueue<Node> pq = zzzzMap[zIdx];
-        if (pq == null) {
-            res.cnt = 0;
-            return res;
-        }
+		presentCars.add(newCar);
 
-        int count = 0;
-        Node[] tempArr = new Node[5];
-        
-        while (count < 5 && !pq.isEmpty()) {
-            Node node = pq.poll();
-            
-            // [핵심] 유령 노드 거르기! 
-            // 1. 이미 출고/삭제된 차이거나 (status == 2)
-            // 2. 포장지에 적힌 상태와 진짜 상태가 다르면 (예: 포장지는 0인데 진짜는 1로 견인된 경우)
-            if (node.car.status == 2 || node.car.status != node.recordedStatus) {
-                continue; // 무시하고 다음 것 뽑기 (알아서 청소됨)
-            }
-            
-            res.carlist[count] = node.car.carNo;
-            tempArr[count] = node; // 정상적인 노드만 저장
-            count++;
-        }
+		res.success = 1;
+		res.locname = (char) (bestX + 'A') + (String.format("%03d", bestY));
 
-        // 뽑았던 정상 노드만 다시 큐로 반환
-        for (int i = 0; i < count; i++) {
-            pq.add(tempArr[i]);
-        }
+		return res;
+	}
 
-        res.cnt = count;
-        return res;
-    }
+	public int pullout(int mTime, String mCarNo) {
+		simulate(mTime);
+
+		if (!carMap.containsKey(mCarNo))
+			return -1;
+
+		Car car = carMap.get(mCarNo);
+		int result = -1;
+
+		if (car.status == 0) {
+			result = mTime - car.enterTime;
+			emptySlots[car.row].add(car.col);
+			emptyCount[car.row]++;
+		} else if (car.status == 1) {
+			int towTime = mTime - (car.enterTime + l);
+			result = -1 * (l + towTime * 5);
+		}
+
+		removeCarData(car);
+		return result;
+	}
+
+	public Solution.RESULT_S search(int mTime, String mStr) {
+		simulate(mTime);
+		Solution.RESULT_S res = new Solution.RESULT_S();
+
+		int zIdx = Integer.parseInt(mStr);
+
+		ZZZZGroup group = zzzzMap[zIdx];
+		if (group == null) {
+			res.cnt = 0;
+			return res;
+		}
+
+		int count = 0;
+
+		Car[] tempParked = new Car[5];
+		int pCount = 0;
+
+		// 1. 주차(parked) 차량 중에서 최대 5대 찾기
+		while (count < 5 && !group.parked.isEmpty()) {
+			Car c = group.parked.poll();
+			if (c.status == 0) {
+				res.carlist[count++] = c.carNo;
+				tempParked[pCount++] = c; // 나중에 다시 큐로 돌려보낼 차량
+			} else if (c.status == 1) {
+				group.towed.add(c); // 견인 처리된 차량이면 towed 큐로 이사 보냄!
+			}
+			// status == 2 인 차량은 버림.
+		}
+
+		// 뽑았던 정상 차량 다시 넣기
+		for (int i = 0; i < pCount; i++) {
+			group.parked.add(tempParked[i]);
+		}
+
+		// 2. 5대가 안 채워졌으면 견인(towed) 차량 중에서 마저 찾기
+		Car[] tempTowed = new Car[5];
+		int tCount = 0;
+
+		while (count < 5 && !group.towed.isEmpty()) {
+			Car c = group.towed.poll();
+			if (c.status == 1) {
+				res.carlist[count++] = c.carNo;
+				tempTowed[tCount++] = c;
+			} // status == 2 인 차량은 버림
+		}
+
+		for (int i = 0; i < tCount; i++) {
+			group.towed.add(tempTowed[i]);
+		}
+
+		res.cnt = count;
+		return res;
+	}
 }
