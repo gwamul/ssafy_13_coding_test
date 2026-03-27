@@ -101,7 +101,6 @@ public class SWEA25293_직선열차_Main {
 		removedTrain[tno] = true;
 		return;
 	}
-<<<<<<< HEAD
 
 	public int calculate(int sId, int eId) {
 		List<Integer> startTrains = stationTrains.get(sId);
@@ -148,37 +147,6 @@ public class SWEA25293_직선열차_Main {
 	    }
 
 	    return -1;
-=======
-	/*
-	 * 
-	 * 어떤 스테이션에는 지나치는 기차가 많이 있을 것 
-	 * 그 모두를 queue에 넣어야 한다.
-	 * 
-	 * 어떤 역에서 시작한다 - 그 역을 지나는 모든 기차가 큐에 자기가 갈 수 있는 모든 역을 집어 넣는다.
-	 * 큐에서 역을 뺀다. 그 역에서 
-	 * 
-	 */
-
-	public int calculate(int sId, int eId) {
-		// 50회
-		// 최소 환승 횟수를 반환한다.
-		// 환승 할 필요가 없으면 0을 반환한다.
-		// 갈수 있는 방법이 없으면 -1을 반환한다.
-		Deque<int[]> q = new ArrayDeque<>();
-		boolean[] visited = new boolean[n+1];
-		boolean[] rided = new boolean[train_cnt];
-		
-		for(int a : stations[sId]) {
-			System.out.println(a);
-			//a는 역 안에 기차들의 cnt 번호.
-			Train t = trains[a]; 
-			for(int i=t.start; i<=t.end; i+=t.interval) {
-				q.addFirst(null);
-			}
-		}
-		
-		return -1;
->>>>>>> 47de6dd3c876df5ba5485f318c26d55d62a796bc
 	}
 	
 	
