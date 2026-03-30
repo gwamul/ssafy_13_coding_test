@@ -71,6 +71,10 @@
 | 2295 | 세 수의 합 | [바로가기](https://www.acmicpc.net/problem/2295) |
 | 5052 | 전화번호 목록 | [바로가기](https://www.acmicpc.net/problem/5052) |
 
+
+## [이상한 다트게임](https://www.codetree.ai/ko/frequent-problems/all/problems/odd-dart-game/description)
+## [산타의 선물공장](https://www.codetree.ai/ko/frequent-problems/all/problems/santa-gift-factory/description)
+
 ---
 
 ## 📚 별도 문제
