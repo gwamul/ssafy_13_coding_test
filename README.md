@@ -56,7 +56,7 @@
 | 1450 | 냅색문제 | [바로가기](https://www.acmicpc.net/problem/1450) |
 | 2457 | 공주님의 정원 | [바로가기](https://www.acmicpc.net/problem/2457) |
 
-### 3월 3주차 ⭐ (이번 주)
+### 3월 3주차
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 2437 | 저울 | [바로가기](https://www.acmicpc.net/problem/2437) |
@@ -64,7 +64,7 @@
 | 1253 | 좋다 | [바로가기](https://www.acmicpc.net/problem/1253) |
 | 2632 | 피자판매 | [바로가기](https://www.acmicpc.net/problem/2632) |
 
-### 3월 4주차
+### 3월 4주차 ⭐ (이번 주)
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 13141 | Ignition | [바로가기](https://www.acmicpc.net/problem/13141) |
