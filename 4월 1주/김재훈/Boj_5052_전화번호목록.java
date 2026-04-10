@@ -1,83 +1,120 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
-public class Main2 {
-	public static void main(String[] args) throws Exception {
+
+public class Main{
+	
+	static class Node{
+		HashMap<Character, Node> child;
+		boolean endOfWord;
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		public Node() {
+			this.child = new HashMap<>();
+			this.endOfWord = false;
+		}
+	}
+	
+	static class Trie{
+		Node root;
 		
-		int n = Integer.parseInt(st.nextToken());
-		List<Integer> list = new ArrayList<>();
-//		int[] arr = new int[n];
-		Map<Integer, Integer> numCnt = new HashMap<>();
+		public Trie() {
+			this.root = new Node();
+		}
 		
-		int zeroCnt = 0;
-		st = new StringTokenizer(br.readLine(), " ");
-		for(int i = 0;i<n;i++) {
-			int num = Integer.parseInt(st.nextToken());
-			if(num != 0) {
-				list.add(num);
-				numCnt.put(num, numCnt.getOrDefault(num, 0)+1);
-			}
-			else {
-				zeroCnt++;
-			}
+		public void insert(String str) {
 			
-		}
-		
-		if(n <= 2) {
-			System.out.println(0);
-			return ;
-		}
-		
-		int result = 0;
-		//0을 제외하고 먼저 계산
-		boolean canMakeZero = false;
-		for(int i = 0;i<list.size()-1;i++) {
-			for(int j = i+1;j<list.size();j++) {
-				int num = list.get(i) + list.get(j);
-				if(num == 0) canMakeZero = true;
-				result += numCnt.getOrDefault(num, 0);
-				numCnt.put(num, 0);
-			}
-		}
-		
-//		System.out.println(result);
-		
-		//0을 만들수 있다면 0도 좋다
-		if(canMakeZero) {
-			result += zeroCnt;
-		}
-		//다른 수끼리 0을 못만드니 자기끼리 만들어야 함.
-		else {
-			if(zeroCnt >= 3) result += zeroCnt;
-			//0이 2개면 0끼리 0을 못만듬
-		}
-		
-		//0이랑 현재수라면
-		if(zeroCnt > 0) {
-			for(int i = 0;i<list.size();i++) {
-				//여기서는 아직 좋지 않은 수만 보면 됨.
-				int cnt = numCnt.getOrDefault(list.get(i), 0);
-				if(cnt > 0) {
-					//자기 혼자만 있으므로 못만듬
-					if(cnt == 1) {
-						//넘어감
-					}
-					//자기 이외에 더 있음. 즉, 자기이외에 동일한 수가 있으므로 자신과 다른 수도 만들 수 있음.
-					else {
-						result += cnt;
-						numCnt.put(list.get(i), 0);
-					}
+			Node node = this.root;
+			boolean isNew = false;
+			for(int i = 0;i<str.length();i++) {
+				char c = str.charAt(i);
+				Node ch = node.child.putIfAbsent(c, new Node());
+				if(ch == null) isNew = true;
+				node = node.child.get(c);
+				if(node.endOfWord) {
+					isNew = false;
+					break;
 				}
 			}
+			
+			node.endOfWord = true;
+			if(!isNew) isYes = false;
 		}
-		
-		
-		System.out.println(result);
-		
-		
+		boolean search(String str) {
+			Node node =  this.root;
+			
+			for(int i = 0;i<str.length();i++) {
+				char c = str.charAt(i);
+				
+				if(node.child.containsKey(c)) {
+					node = node.child.get(c);
+				}
+				else return false;
+			}
+			
+			return node.endOfWord;
+		}
+		public boolean delete(String str) {
+			boolean result = delete(this.root, str, 0);
+			return result;
+		}
+
+		private boolean delete(Node node, String str, int idx) {
+			char c = str.charAt(idx);
+			
+			if(!node.child.containsKey(c)) {
+				return false;
+			}
+			
+			Node cur = node.child.get(c);
+			idx++;
+			if(idx == str.length()) {
+				if(!cur.endOfWord) {
+					return false;
+				}
+				
+				cur.endOfWord = false;
+				
+				if(cur.child.isEmpty()) {
+					node.child.remove(c);
+				}
+			}
+			else {
+				if(!this.delete(cur, str, idx)) {
+					return false;
+				}
+				
+				if(!cur.endOfWord && cur.child.isEmpty()) {
+					node.child.remove(c);
+				}
+			}
+			return true;
+		}
 	}
+
+	static boolean isYes = true;
+	
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int t = Integer.parseInt(br.readLine());
+		for(int test = 1; test <= t; test++) {
+			int n = Integer.parseInt(br.readLine());
+			
+			Trie trie = new Trie();
+			isYes = true;
+			for(int i = 0;i<n;i++) {
+				//char[] chArr = br.readLine().toCharArray();
+				String str = br.readLine();
+				trie.insert(str);
+				//1. 만약 나는 끝났는데 이미 있다면 
+				//2. 만약 내가 넣는데 endOfWord가 true를 지나쳤다면
+			}
+			
+			if(isYes) System.out.println("YES");
+			else System.out.println("NO");
+		}
+
+	}
+	
+
 }
