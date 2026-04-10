@@ -1,0 +1,195 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+	
+	static int n;
+	static int m;
+	static int q;
+	
+	static int[][] board; //실제 수 저장
+	static int[] onePos; //각 원판의 첫번째 위치
+	static boolean[][] visited;
+	
+	static int x;
+	static int d;
+	static int k;
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
+		q = Integer.parseInt(st.nextToken());
+		
+		board = new int[n][m];
+		onePos = new int[n];
+		
+		for(int i = 0;i<n;i++) {
+			st = new StringTokenizer(br.readLine(), " ");
+			
+			for(int j = 0;j<m;j++) {
+				board[i][j] = Integer.parseInt(st.nextToken());
+			}
+		}
+//		printBoard();
+		
+		//q들어오면 바로 시행
+		for(int i = 0;i<q;i++) {
+			st = new StringTokenizer(br.readLine(), " ");
+			
+			x = Integer.parseInt(st.nextToken());
+			d = Integer.parseInt(st.nextToken());
+			k = Integer.parseInt(st.nextToken());
+			
+			//회전 후 지웠는지 반환
+			boolean isErase = rotate();
+			//안지웠으면 정규화
+			if(!isErase) normal();
+		}
+		
+		printSum();
+	}
+	
+	private static void printBoard() {
+		System.out.println("board print==========================");
+		for(int i = 0;i<n;i++) {
+			for(int j = 0;j<m;j++) {
+				System.out.printf("%3d",board[i][(onePos[i]+j)%m]);
+			}
+			System.out.println();
+		}
+	}
+	
+	private static void printVisit() {
+		System.out.println("visit print==========================");
+		for(int i = 0;i<n;i++) {
+			for(int j = 0;j<m;j++) {
+				if(visited[i][(onePos[i]+j)%m])System.out.print(1);
+				else System.out.print(0);
+			}
+			System.out.println();
+		}
+	}
+
+	private static void printSum() {
+		int sum = 0;
+		for(int i = 0;i<n;i++) {
+			for(int j = 0;j<m;j++) {
+				sum += board[i][j];
+			}
+		}
+		
+		System.out.println(sum);
+	}
+
+	private static void normal() {
+		
+//		System.out.println("정규화====================");
+		int sum = 0;
+		int cnt = 0;
+		//전체 평균 구하기
+		for(int i = 0;i<n;i++) {
+			for(int j = 0;j<m;j++) {
+				if(board[i][j] > 0) {
+					sum += board[i][j];
+					cnt++;
+				}
+			}
+		}
+		
+		int avg = sum/cnt;
+		
+		//정규화
+		for(int i = 0;i<n;i++) {
+			for(int j = 0;j<m;j++) {
+				if(board[i][j] != 0 && board[i][j] > avg) {
+					board[i][j]--;
+				}
+				else if(board[i][j] != 0 && board[i][j] < avg) {
+					board[i][j]++;
+				}
+			}
+		}
+	}
+
+	private static boolean rotate() {
+		
+		//1. 기준점만 옮기고
+		for(int i = 0;i<n;i++) {
+			if((i+1) % x == 0) {
+				if(d == 0) {
+					onePos[i] = (onePos[i] - k + m)%m;
+				}
+				else {
+					onePos[i] = (onePos[i] + k)%m;
+				}
+			}
+		}
+//		System.out.println("돌린 뒤 : ===========================");
+//		printBoard();
+		
+		visited = new boolean[n][m];
+		boolean isMeet = false;
+		
+		//2. 접합인게 있는지 확인
+		//원판별로 탐색
+		for(int i = 0;i<n;i++) {
+			//m-2번 수까지
+			for(int j = 0;j<m-1;j++) {
+				//지금 원판이 돌려져 있는 상태이기 때문에 맞춰줘야 함.
+				if(board[i][(onePos[i]+j)%m]!= 0 && board[i][(onePos[i]+1+j)%m]!=0 && board[i][(onePos[i]+j)%m] == board[i][(onePos[i]+1+j)%m]) {
+					visited[i][(onePos[i]+j)%m] = true;
+					visited[i][(onePos[i]+1+j)%m] = true;
+					isMeet = true;
+				}
+			}
+			//0번이랑 m-1번 비교
+			if(board[i][(onePos[i]+m-1)%m]!= 0 && board[i][(onePos[i])%m] != 0 && board[i][(onePos[i]+m-1)%m] == board[i][(onePos[i])%m]) {
+				visited[i][(onePos[i]+m-1)%m] = true;
+				visited[i][(onePos[i])%m] = true;
+				isMeet = true;
+			}
+		}
+		
+//		System.out.println("원판별로 탐색 후 :===============================");
+//		printVisit();
+		
+		//원판 접합부분 탐색
+		for(int i = 0;i<m;i++) {
+			for(int j = 0;j<n-1;j++) {
+				//지금 원판이 돌려져 있는 상태이기 때문에 맞춰줘야 함.
+				//board[i][(onePos[i]+j)%m]
+//				System.out.println("접합부 탐색 실 숫자 : "+board[j][(onePos[j]+i)%m]+", "+board[j+1][(onePos[j+1]+i)%m]+
+//						"|| 실제 board의 좌표 : "+"("+j+", "+(onePos[j]+i)%m+"), ("+(j+1)+", "+(onePos[j+1]+i)%m+")");
+				if(board[j][(onePos[j]+i)%m]!= 0 && board[j+1][(onePos[j+1]+i)%m] != 0 && board[j][(onePos[j]+i)%m] == board[j+1][(onePos[j+1]+i)%m]) {
+					visited[j][(onePos[j]+i)%m] = true;
+					visited[j+1][(onePos[j+1]+i)%m] = true;		
+					isMeet = true;
+				}		
+			}
+		}
+		
+//		System.out.println("원판 접합부분  탐색 후 :===============================");
+//		printVisit();
+		//만약 접합이 없다면
+		if(!isMeet) return false;
+		
+		//지우기
+		for(int i = 0;i<n;i++) {
+			for(int j = 0;j<m;j++) {
+				if(visited[i][j]) {
+					board[i][j] = 0;
+				}
+			}
+		}
+//		System.out.println("지운 뒤 : ===========================");
+//		printBoard();
+		
+		return true;
+	}
+
+}
+
