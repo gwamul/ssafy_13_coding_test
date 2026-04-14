@@ -71,9 +71,12 @@
 | 2295 | 세 수의 합 | [바로가기](https://www.acmicpc.net/problem/2295) |
 | 5052 | 전화번호 목록 | [바로가기](https://www.acmicpc.net/problem/5052) |
 
-
-## [이상한 다트게임](https://www.codetree.ai/ko/frequent-problems/all/problems/odd-dart-game/description)
-## [산타의 선물공장](https://www.codetree.ai/ko/frequent-problems/all/problems/santa-gift-factory/description)
+### 4월 2주차
+| 문제 번호 | 문제 이름 | 링크 |
+| :---: | :--- | :---: |
+| 15824 | 너 봄에는 캡사이신 | [바로가기](https://www.acmicpc.net/problem/15824) |
+| 2616 | 소형기관차 | [바로가기](https://www.acmicpc.net/problem/2616) |
+| 2629 | 양팔저울 | [바로가기](https://www.acmicpc.net/problem/2629) |
 
 ---
 
