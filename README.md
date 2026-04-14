@@ -64,14 +64,14 @@
 | 1253 | 좋다 | [바로가기](https://www.acmicpc.net/problem/1253) |
 | 2632 | 피자판매 | [바로가기](https://www.acmicpc.net/problem/2632) |
 
-### 3월 4주차 ⭐ (이번 주)
+### 3월 4주차
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 13141 | Ignition | [바로가기](https://www.acmicpc.net/problem/13141) |
 | 2295 | 세 수의 합 | [바로가기](https://www.acmicpc.net/problem/2295) |
 | 5052 | 전화번호 목록 | [바로가기](https://www.acmicpc.net/problem/5052) |
 
-### 4월 2주차
+### 4월 2주차 ⭐ (이번 주)
 | 문제 번호 | 문제 이름 | 링크 |
 | :---: | :--- | :---: |
 | 15824 | 너 봄에는 캡사이신 | [바로가기](https://www.acmicpc.net/problem/15824) |
