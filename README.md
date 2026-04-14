@@ -78,6 +78,9 @@
 | 2616 | 소형기관차 | [바로가기](https://www.acmicpc.net/problem/2616) |
 | 2629 | 양팔저울 | [바로가기](https://www.acmicpc.net/problem/2629) |
 
+## [아기 고래의 첫 항해](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/baby-whale-first-voyage/description)
+## [코디의 향수 공방](https://www.codetree.ai/ko/frequent-problems/samsung-sw/problems/perfume-workshop/description)
+
 ---
 
 ## 📚 별도 문제
